@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.8.3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  nokeva:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - /var/lib/nokeva/data:/var/lib/nokeva/data
+      - ./config.json:/home/node/config.json
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    links: [rabbitmq]

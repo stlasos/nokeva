@@ -1,0 +1,9 @@
+{
+  "dir": "",
+  "snapshot_interval": 0,
+  "rabbitmq": {
+    "CONNECTION_URL": "",
+    "INCOME_QUEUE": "",
+    "OUTPUT_QUEUE": ""
+  }
+}
